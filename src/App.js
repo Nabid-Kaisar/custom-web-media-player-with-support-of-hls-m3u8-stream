@@ -48,7 +48,7 @@ class App extends Component {
 
     //checking the current className and toggling
     var muteUnmuteButton = document.getElementById("mute-unmute-button");
-    if (muteUnmuteButton.classList.value === "unmute-button") {
+    if (video.muted) {
       muteUnmuteButton.classList.remove("unmute-button");
       muteUnmuteButton.classList.add("mute-button");
     } else {
