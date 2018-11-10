@@ -27,11 +27,9 @@ class App extends Component {
       video.pause();
     }
     var playPauseButton = document.getElementById("play-pause-button");
-    console.log(playPauseButton.classList.value);
 
     //checking the current className and toggling
-
-    if (playPauseButton.classList.value === "play-button") {
+    if (!video.paused) {
       playPauseButton.classList.remove("play-button");
       playPauseButton.classList.add("pause-button");
     } else {
