@@ -82,23 +82,26 @@ class App extends Component {
   handleMinMax() {
     var video = document.getElementById("video");
     //checking if video running full screen or not
-    if(!video.webkitDisplayingFullscreen){
+    if (!video.webkitDisplayingFullscreen) {
       if (video.requestFullscreen) video.requestFullscreen();
       //adding supports for all browsers
       else if (video.msRequestFullscreen) video.msRequestFullscreen();
       else if (video.mozRequestFullScreen) video.mozRequestFullScreen();
       else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
-    }else{
-      //*** have to check other browser's compatibility
+    } else {
+      //*** have to check other browser's compatibility ***
       document.webkitExitFullscreen();
     }
   }
 
-  handlePip(){
+  handlePip() {
     var video = document.getElementById("video");
-    video.requestPictureInPicture();
+    if (video.requestPictureInPicture) {
+      video.requestPictureInPicture();
+    }else{
+      console.log("your system does not support picture in picture mode, please try another browser")
+    }
   }
-
 
   componentDidMount() {
     //using hls.js to convert m3u8 format to mp4
@@ -150,20 +153,7 @@ class App extends Component {
             className="maximize-button"
             onClick={this.handleMinMax}
           />
-          <button id = "pip"
-          className = "pip-button"
-          onClick = {this.handlePip}
-          />
-        </div>
-
-        <div>
-          <h5>Select Video Quality</h5>
-          <select id="setting-button">
-            <option value="360p">360p</option>
-            <option value="480p">480p</option>
-            <option value="720p">720p</option>
-            <option value="1080p">1080p</option>
-          </select>
+          <button id="pip" className="pip-button" onClick={this.handlePip} />
         </div>
       </div>
     );
