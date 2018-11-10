@@ -1,0 +1,23 @@
+<h1>Custom HTML5 Video Player Demo</h1>
+<div id='player'>
+  <video id='video-element'>
+    <source src='https://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4'>
+    <source src='https://www.w3schools.com/html/mov_bbb.ogg' type='video/ogg'>
+  </video>
+  <div id='controls'>
+    <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+    <button id='btnReplay' class='replay' title='replay' accesskey="R" onclick='replayVideo();'>Replay</button>
+    <button id='btnPlayPause' class='play' title='play' accesskey="P" onclick='playPauseVideo();'>Play</button>
+    <button id='btnStop' class='stop' title='stop' accesskey="X" onclick='stopVideo();'>Stop</button>
+    <input type="range" id="volume-bar" title="volume" min="0" max="1" step="0.1" value="1">
+    <button id='btnMute' class='mute' title='mute' onclick='muteVolume();'>Mute</button>
+    <button id='btnFullScreen' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen();'>[&nbsp;&nbsp;]</button>
+  </div>
+</div>
+<div style="clear:both"></div>
+<p>Video courtesy of <a href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+<p>Volume bar styled using <a href="http://danielstern.ca/range.css/#/" target="_blank">range.css</a>. </p>
+
+<hr />
+<p>If you find this demo useful, please consider <a href="https://www.paypal.me/RobertGravelle/1" target="_blank">donating $1 dollar</a> (secure PayPal link) for a coffee or purchasing one of my songs from <a href="https://ax.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?term=rob%20gravelle" target="_blank">iTunes.com</a> or <a href="http://www.amazon.com/s/ref=ntt_srch_drd_B001ES9TTK?ie=UTF8&field-keywords=Rob%20Gravelle&index=digital-music&search-type=ss" target="_blank">Amazon.com</a> for only 0.99 cents each. I have also released CDs with my band <a href="https://www.cdbaby.com/Artist/IvoryKnight" target="_blank">Ivory Knight</a> and Annihilator main-man Jeff Waters.</p>
+<p>Rob uses and recommends <a href="http://www.mochahost.com/2425.html" target="_blank">MochaHost</a>, which provides Web Hosting for as low as $1.95 per month, as well as unlimited emails and disk space!</p>

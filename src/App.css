@@ -2,31 +2,32 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.control-button button{
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 38px;
+  width: 40px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.play-button {
+  background: url("./resources/play.svg") no-repeat top left;
+
 }
 
-.App-link {
-  color: #61dafb;
+.pause-button{
+  background: url("./resources/pause.svg") no-repeat top left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mute-button{
+  background: url('./resources/mute.svg') no-repeat top left;
+}
+
+.unmute-button{
+  background: url('./resources/unmute.svg') no-repeat top left;
 }
