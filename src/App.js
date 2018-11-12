@@ -17,6 +17,7 @@ class App extends Component {
     this.handleSetting = this.handleSetting.bind(this);
     this.handleMinMax = this.handleMinMax.bind(this);
     this.handlePip = this.handlePip.bind(this);
+    this.handleVolChange = this.handleVolChange.bind(this);
   }
 
   async handlePlayPause() {
@@ -40,6 +41,7 @@ class App extends Component {
 
   handleMuteVolume() {
     var video = document.getElementById("video");
+    var volumeSlider = document.getElementById("volume-control");
     if (video.muted) {
       video.muted = false;
     } else {
@@ -51,8 +53,34 @@ class App extends Component {
     if (video.muted) {
       muteUnmuteButton.classList.remove("unmute-button");
       muteUnmuteButton.classList.add("mute-button");
+      volumeSlider.value = 0;
+      video.volume = 0;
     } else {
       muteUnmuteButton.classList.remove("mute-button");
+      muteUnmuteButton.classList.add("unmute-button");
+      volumeSlider.value = 50;
+      video.volume = 1/2;
+    }
+
+  }
+
+  handleVolChange(e){
+    var video = document.getElementById("video");
+    var muteUnmuteButton = document.getElementById("mute-unmute-button");
+    video.volume = (e.target.value)/100;
+
+    //cheking if muted by slider
+    if(video.volume === 0){
+      video.muted = true;
+      muteUnmuteButton.classList = " ";
+      muteUnmuteButton.classList.add("mute-button");
+    }else if(video.volume > 0 && video.volume < 0.5){
+      video.muted = false;
+      muteUnmuteButton.classList = " ";
+      muteUnmuteButton.classList.add("low-vol-button")
+    }else{
+      video.muted = false;
+      muteUnmuteButton.classList = " ";
       muteUnmuteButton.classList.add("unmute-button");
     }
   }
@@ -96,8 +124,10 @@ class App extends Component {
     var video = document.getElementById("video");
     if (video.requestPictureInPicture) {
       video.requestPictureInPicture();
-    }else{
-      console.log("your system does not support picture in picture mode, please try another browser")
+    } else {
+      console.log(
+        "your system does not support picture in picture mode, please try another browser"
+      );
     }
   }
 
@@ -121,10 +151,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div >
         <video id="video" width="400" controls autoPlay />
-
         <br />
+
         <div className="control-button">
           <button
             id="play-pause-button"
@@ -136,6 +166,17 @@ class App extends Component {
             className="unmute-button"
             onClick={this.handleMuteVolume}
           />
+
+          <input
+            id="volume-control"
+            type="range"
+            className="volume-slider"
+            min="0"
+            max="100"
+            step="1"
+            onChange={this.handleVolChange}
+          />
+
           <button
             id="setting"
             className="dropbtn"

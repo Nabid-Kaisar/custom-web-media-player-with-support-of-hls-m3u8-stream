@@ -3,16 +3,27 @@
 }
 
 .control-button button {
+  margin-top: 10px;
   background-size: contain;
   cursor: pointer;
-  display: inline-block;
-  height: 38px;
+  height: 30px;
   width: 40px;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
   outline: none;
+}
+
+.control-button input{
+  -webkit-appearance: none;
+  width: 10%;
+  height: 7px;
+  background: grey;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
 
 /*start of dropdown */
@@ -70,6 +81,48 @@
 }
 /*end of drop down buttons */
 
+/*
+  Volume Slider Css start
+*/
+/* .volume-slider {
+    -webkit-appearance: none;
+    width: 30%;
+    height: 7px;
+    background: grey;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+} */
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 2px solid black;
+
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* volume slider css end*/
+
+
 /* buttons */
 .play-button {
   background: url("./resources/play.svg") no-repeat top left;
@@ -86,7 +139,9 @@
 .unmute-button {
   background: url("./resources/unmute.svg") no-repeat top left;
 }
-
+.low-vol-button{
+  background: url("./resources/lowVolume.svg") no-repeat top left;
+}
 .setting-button {
   background: url("./resources/setting.svg") no-repeat top left;
 }
