@@ -15,7 +15,7 @@
   outline: none;
 }
 
-.control-button input{
+.control-button input {
   -webkit-appearance: none;
   width: 10%;
   height: 7px;
@@ -23,8 +23,8 @@
   outline: none;
   opacity: 0.7;
   /* opacity: 1; */
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 /*start of dropdown */
@@ -55,7 +55,6 @@
   overflow: auto;
   max-width: 200px;
   margin-left: 220px;
-
 }
 
 .dropdown-content ul {
@@ -97,28 +96,28 @@
 } */
 
 .volume-slider:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: red;
-    opacity: 1;
-    cursor: pointer;
-    border: 2px solid red;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: red;
+  opacity: 1;
+  cursor: pointer;
+  border: 2px solid red;
 }
 
 .volume-slider::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-    opacity:1;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  opacity: 1;
 }
 
 /* volume slider css end*/
@@ -126,44 +125,63 @@
 /*
   Progress Bar slider started
 */
-.progress-slider{
+
+.progress-slider {
   -webkit-appearance: none;
   width: 29.2%;
   height: 4px;
   background: red;
   outline: none;
   opacity: 1;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
 }
 
 .progress-slider:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .progress-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    /* width: 18px;
+  -webkit-appearance: none;
+  appearance: none;
+  /* width: 18px;
     height: 18px; */
-    border-radius: 50%;
-    background: red;
-    cursor: pointer;
-    border: 1px solid red;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
+  border: 1px solid red;
 }
 
 .progress-slider::-moz-range-thumb {
-    /* width: 18px;
+  /* width: 18px;
     height: 18px; */
-    border-radius: 50%;
-    background: red;
-    cursor: pointer;
+  border-radius: 50%;
+  background: red;
+  cursor: pointer;
 }
 
 /*
   Progress Bar slider ended
 */
 
+/*container overlay starts
+  */
+   .container {
+    position: relative;
+  }
+
+  .all-controls{
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 160px;
+    right: 0;
+    bottom: 300px;
+    left: 0;
+    background-color: transparent;
+    
+  }
+  /* overlay ends */
 /* buttons */
 .play-button {
   background: url("./resources/play.svg") no-repeat top left;
@@ -180,15 +198,15 @@
 .unmute-button {
   background: url("./resources/unmute.svg") no-repeat top left;
 }
-.low-vol-button{
+.low-vol-button {
   background: url("./resources/lowVolume.svg") no-repeat top left;
 }
 .setting-button {
   background: url("./resources/setting.svg") no-repeat top left;
 }
-.maximize-button{
+.maximize-button {
   background: url("./resources/maximize.svg") no-repeat top left;
 }
-.pip-button{
+.pip-button {
   background: url("./resources/pip.svg") no-repeat top left;
 }
