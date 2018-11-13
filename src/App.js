@@ -48,20 +48,21 @@ class App extends Component {
       video.muted = true;
     }
 
-    //checking the current className and toggling
+    //checking the current state of mute and toggling
     var muteUnmuteButton = document.getElementById("mute-unmute-button");
     if (video.muted) {
-      muteUnmuteButton.classList.remove("unmute-button");
+      muteUnmuteButton.classList = " ";
       muteUnmuteButton.classList.add("mute-button");
       volumeSlider.value = 0;
       video.volume = 0;
     } else {
-      muteUnmuteButton.classList.remove("mute-button");
+      muteUnmuteButton.classList = " ";
       muteUnmuteButton.classList.add("unmute-button");
+      console.log(muteUnmuteButton.classList)
       volumeSlider.value = 50;
       video.volume = 1/2;
+      console.log(muteUnmuteButton.classList)
     }
-
   }
 
   handleVolChange(e){
@@ -151,9 +152,19 @@ class App extends Component {
 
   render() {
     return (
-      <div >
+      <div id = "container" style ={{backgroundColor: "white"}}>
         <video id="video" width="400" controls autoPlay />
         <br />
+        <input
+          id="progress-control"
+          type="range"
+          className="progress-slider"
+          min="0"
+          max="100"
+          step="1"
+          value = "100"
+          // onChange={}
+        />
 
         <div className="control-button">
           <button

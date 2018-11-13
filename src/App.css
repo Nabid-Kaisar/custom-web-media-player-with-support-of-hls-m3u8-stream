@@ -22,6 +22,7 @@
   background: grey;
   outline: none;
   opacity: 0.7;
+  /* opacity: 1; */
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
@@ -48,12 +49,12 @@
 
 .dropdown-content {
   display: none;
-  position: relative;
+  position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
   overflow: auto;
   max-width: 200px;
-  margin-left: 400px;
+  margin-left: 220px;
 
 }
 
@@ -84,16 +85,15 @@
 /*
   Volume Slider Css start
 */
-/* .volume-slider {
+/* .volume-slider{
     -webkit-appearance: none;
-    width: 30%;
+    width: 15%;
     height: 7px;
     background: grey;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-
 } */
 
 .volume-slider:hover {
@@ -106,10 +106,10 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: white;
+    background: red;
+    opacity: 1;
     cursor: pointer;
-    border: 2px solid black;
-
+    border: 2px solid red;
 }
 
 .volume-slider::-moz-range-thumb {
@@ -118,10 +118,51 @@
     border-radius: 50%;
     background: white;
     cursor: pointer;
+    opacity:1;
 }
 
 /* volume slider css end*/
 
+/*
+  Progress Bar slider started
+*/
+.progress-slider{
+  -webkit-appearance: none;
+  width: 29.2%;
+  height: 4px;
+  background: red;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.progress-slider:hover {
+    opacity: 1;
+}
+
+.progress-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 18px;
+    height: 18px; */
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.progress-slider::-moz-range-thumb {
+    /* width: 18px;
+    height: 18px; */
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+}
+
+/*
+  Progress Bar slider ended
+*/
 
 /* buttons */
 .play-button {
